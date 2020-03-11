@@ -1,0 +1,77 @@
+{
+	"width": 640,
+	"height": 360,
+	"fps": 30,
+	"main": "./script/_bootstrap.js",
+	"assets": {
+		"_bootstrap": {
+			"type": "script",
+			"path": "script/_bootstrap.js",
+			"global": true
+		},
+		"main": {
+			"type": "script",
+			"path": "script/main.js",
+			"global": true
+		},
+		"parameterObject": {
+			"type": "script",
+			"path": "script/parameterObject.js",
+			"global": true
+		},
+		"saikoro1": {
+			"type": "image",
+			"width": 48,
+			"height": 48,
+			"path": "image/saikoro1.png"
+		},
+		"saikoro2": {
+			"type": "image",
+			"width": 48,
+			"height": 48,
+			"path": "image/saikoro2.png"
+		},
+		"saikoro3": {
+			"type": "image",
+			"width": 48,
+			"height": 48,
+			"path": "image/saikoro3.png"
+		},
+		"saikoro4": {
+			"type": "image",
+			"width": 48,
+			"height": 48,
+			"path": "image/saikoro4.png"
+		},
+		"saikoro5": {
+			"type": "image",
+			"width": 48,
+			"height": 48,
+			"path": "image/saikoro5.png"
+		},
+		"saikoro6": {
+			"type": "image",
+			"width": 48,
+			"height": 48,
+			"path": "image/saikoro6.png"
+		},
+		"rule": {
+			"type": "image",
+			"width": 640,
+			"height": 360,
+			"path": "image/ruleyati.png"
+		}
+	},
+	"environment": {
+		"sandbox-runtime": "2",
+		"niconico": {
+			"supportedModes": [
+				"single",
+				"ranking"
+			],
+			"preferredSessionParameters": {
+				"totalTimeLimit": 185
+			  }
+		}
+	}
+}
