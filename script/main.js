@@ -6,12 +6,15 @@ function main(param) {
         // このシーンで利用するアセットのIDを列挙し、シーンに通知します
         assetIds: ["saikoro1","saikoro2","saikoro3","saikoro4","saikoro5","saikoro6","rule"]
     });
-    var time = 180; // 制限時間
+    var time = 120; // 制限時間
     scene.message.add(function (msg) {
         if (msg.data && msg.data.type === "start" && msg.data.parameters && msg.data.parameters.totalTimeLimit) {
             time = msg.data.parameters.totalTimeLimit-5;//新市場用秒数 tTLは市場に常時される時間
         }
     });
+    if (param.isAtsumaru) {
+        time = 180;
+    }
     g.game.vars.gameState = { score: 0 };//スコア初期値
     var kaisuu=0;//今回振った回数
     var turn=0;//ターン数
@@ -345,7 +348,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
             scene: scene,
             cssColor: "lime",
             x: (g.game.width - 32) / 2-16,
-            y: 0,
+            y: 12,
             width: 136,
             height: 32,
             touchable: true,
@@ -1067,7 +1070,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
             fontSize: font.size / 2,
             textColor: "black",
             x: 0.79 * g.game.width,
-            y: 80
+            y: 104
         });
         scene.append(scoreLabel);
         // 残り時間表示用ラベル
@@ -1078,7 +1081,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
             fontSize: font.size / 2,
             textColor: "black",
             x: 0.79 * g.game.width,
-            y:48
+            y:72
         });
         scene.append(timeLabel);
         scene.pointDownCapture.add(function () {// 制限時間以内であればタッチ1回ごとにスコア更新
