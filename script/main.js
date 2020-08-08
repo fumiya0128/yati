@@ -270,7 +270,7 @@ function main(param) {
                 if (Math.max.apply(null, mekazu) >= 5) {//yati
                     textyati.tag.sum = 50;
                 }
-                textyati.text = 'ヤッツィー(+' + textyati.tag.sum + ')';
+                textyati.text = 'Yacht          (+' + textyati.tag.sum + ')';
                 textyati.invalidate();
             }
             if (buttonch.cssColor === "lime") {
@@ -336,7 +336,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
             if(buttonyati.cssColor=== "gray"&&textyati.tag.sum>=50&&Math.max.apply(null, mekazu) >= 5){
                 textyati.tag.sum+=100;
                 g.game.vars.gameState.score +=100;
-                textyati.text = 'ヤッツィー ' + textyati.tag.sum;
+                textyati.text = 'Yacht          ' + textyati.tag.sum;
                 textyati.invalidate();
             }
             buttonre.cssColor="lime";//振り直しボタンの色変更(後で追加した)
@@ -886,7 +886,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
             scene: scene,
             font: font,
             fontSize: 32,
-            text: "ヤッツィー",
+            text: "Yacht   ",
             tag:{sum:0},
             x: 8,
             y: -4
@@ -896,7 +896,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
         } else {
             textyati.tag.sum = 0
         }
-        textyati.text = 'ヤッツィー(+' + textyati.tag.sum+')';
+        textyati.text = 'Yacht          (+' + textyati.tag.sum+')';
         textyati.invalidate();
         buttonyati.append(textyati);
         scene.append(buttonyati);
@@ -905,7 +905,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
                 buttonyati.cssColor = "gray";
                 buttonyati.modified();
                 g.game.vars.gameState.score += textyati.tag.sum;
-                textyati.text = 'ヤッツィー ' + textyati.tag.sum;
+                textyati.text = 'Yacht          ' + textyati.tag.sum;
                 textyati.invalidate();
                 for (let i = 0; i < 5; i++) {
                     deleteDice(i);
@@ -980,6 +980,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
             buttonretry.append(textretry);
             scene.append(buttonretry);
             buttonretry.pointDown.add(function () {//ボタン(retry)推したとき
+                window.RPGAtsumaru.globalServerVariable.triggerCall(2222);//20200411追加
                 time = 180;
                 kaisuu = 0;
                 turn = 0;
@@ -1048,7 +1049,7 @@ if(placeContainer.children[index].children[0].tag.me==1&&button1.cssColor == "gr
                 buttonstb.cssColor = "lime"
                 buttonstb.modified();
                 textyati.tag.sum = 0;
-                textyati.text = 'ヤッツィー(+' + textyati.tag.sum + ')';
+                textyati.text = 'Yacht          (+' + textyati.tag.sum + ')';
                 textyati.invalidate();
                 buttonyati.cssColor = "lime"
                 buttonyati.modified();
